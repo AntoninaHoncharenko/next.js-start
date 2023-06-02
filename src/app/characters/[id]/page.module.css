@@ -1,0 +1,41 @@
+.char {
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  border: 1px solid black;
+  overflow: hidden;
+  margin: 30px auto 0;
+}
+
+.image {
+  width: 250px;
+  height: 200px;
+}
+
+.infoWrap {
+  padding: 15px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+}
+
+.info {
+  font-size: 16px;
+  color: black;
+}
+
+.backLink {
+  margin-left: 200px;
+}
+
+.loader {
+  width: 100px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

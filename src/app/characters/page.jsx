@@ -1,20 +1,35 @@
 import Image from "next/image";
-import { fetchCharacters } from "../(services)/api/api";
+import Link from "next/link";
+import { fetchCharacters } from "../../services/api/api";
+import css from "./characters.module.css";
 
 export default async function Characters() {
   const data = await fetchCharacters();
-  const { id, name, image, species, status } = data;
 
   return (
     <div>
-      <h1>Character</h1>
+      <h1 className={css.mainTitle}>Characters</h1>
       {data && (
-        <div>
-          <Image src={image} alt="avatar" width={300} height={300} />
-          <p>{name}</p>
-          <p>{species}</p>
-          <p>{status}</p>
-        </div>
+        <ul className={css.list}>
+          {data.map((item) => (
+            <li key={item.id} className={css.item}>
+              <Link href={`/characters/${item.id}`}>
+                <Image
+                  src={item.image}
+                  alt="avatar"
+                  width={300}
+                  height={300}
+                  className={css.image}
+                />
+                <ul className={css.infoWrap}>
+                  <li className={css.title}>{item.name}</li>
+                  <li className={css.info}>{item.species}</li>
+                  <li className={css.info}>{item.status}</li>
+                </ul>
+              </Link>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

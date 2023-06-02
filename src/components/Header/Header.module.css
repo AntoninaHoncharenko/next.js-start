@@ -1,0 +1,11 @@
+.header {
+  padding: 20px 0;
+  border-bottom: 2px solid black;
+}
+
+.nav {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}

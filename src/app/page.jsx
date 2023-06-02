@@ -1,7 +1,5 @@
+import css from "./page.module.css";
+
 export default function Home() {
-  return (
-    <div>
-      <h1>Home </h1>
-    </div>
-  );
+  return <h1 className={css.mainTitle}>Home </h1>;
 }
